@@ -145,6 +145,7 @@ select * from bookings where checkin_date < '2020-01-01' and nights < 4;
 -- 8	4	8	2019-12-23	3
 -- 10	6	5	2019-09-14	2
 
+-- EXERCISE 1 WEEK 2
 -- For example, to add a new column to the existing customers table:2
 alter table customers add column date_of_birth date;
 
@@ -153,3 +154,12 @@ alter table customers rename column date_of_birth to birthdate;
 
 -- To delete an existing column from the customers table:
 alter table customers drop column birthdate;
+
+-- EXERCISE 2 WEEK 2
+-- creating a table
+create table test (
+	id serial primary key	
+);
+
+-- deleting a table
+drop table test;
