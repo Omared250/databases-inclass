@@ -163,3 +163,18 @@ create table test (
 
 -- deleting a table
 drop table test;
+
+-- EXERCISE 3 WEEK 2
+
+-- Update the postcode of the hotel named Elder Lake Hotel to L10XYZ
+update hotels set postcode='L10XYZ' where name='Elder Lake Hotel';
+
+-- Update the number of rooms of Cozy Hotel to 25
+update hotels set rooms=25 where name='Cozy Hotel';
+
+-- For the customer named Nadia Sethuraman, update her address to 2 Blue Street, her city to Glasgow and her postcode to G11ABC 
+-- in one query
+update customers set address='2 Blue Street', city='Glasgow', postcode='G11ABC' where name='Nadia Sethuraman';
+
+-- Update all the bookings of customer with ID 1 for the hotel with ID 1 to 5 nights in one query
+update bookings set nights=5 where customer_id=1 and hotel_id=1;
