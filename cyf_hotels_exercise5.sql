@@ -189,3 +189,59 @@ delete from bookings where customer_id=6;
 
 -- Delete the customer with ID 6
 delete from customers where id=6;
+
+-- EXERCISE 5 WEEK 2
+
+-- selecting a customer
+select * from customers where name='John Smith';
+
+-- all bookings
+select * from bookings where id=1;
+
+-- get all the same information like above with a single query!
+select 	
+	c.name as customer_name, 
+	h.name as hotel_name, 
+	b.checkin_date, 
+	b.nights 
+from customers c 
+inner join bookings b on b.customer_id=c.id 
+inner join hotels h on h.id=b.hotel_id
+where c.name='John Smith';
+
+-- give me ONLY the hotel names where Martin Sommer has stayed or will stay
+select
+	h.name as hotel_name
+from customers c 
+inner join bookings b on b.customer_id=c.id
+inner join hotels h on h.id=b.hotel_id
+where c.name='Martín Sommer';
+
+select * from customers;
+
+-- Retrieve all the bookings along with customer data for bookings starting in 2020
+select *
+from customers c 
+inner join bookings b on b.customer_id=c.id 
+where b.checkin_date >= '2020-01-01' and b.checkin_date <= '2020-12-31';
+
+-- Retrieve the customer names, booking start dates and number of nights for all customers who 
+-- booked the hotel name Jade Peaks Hotel
+select 
+	c.name as customer_name,
+	b.checkin_date,
+	b.nights 
+from customers c 
+inner join bookings b on b.customer_id=c.id 
+inner join hotels h on h.id=b.hotel_id 
+where h.name='Jade Peaks Hotel';
+
+-- Retrieve all the booking start dates with customer names and hotel names for all bookings for more than 5 nights
+select 
+	b.checkin_date,
+	c.name as customer_name,
+	h.name as hotel_name
+from bookings b
+inner join customers c on b.customer_id=c.id 
+inner join hotels h on h.id=b.hotel_id
+where b.nights >= 5;
