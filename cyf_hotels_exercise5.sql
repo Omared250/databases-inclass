@@ -178,3 +178,14 @@ update customers set address='2 Blue Street', city='Glasgow', postcode='G11ABC' 
 
 -- Update all the bookings of customer with ID 1 for the hotel with ID 1 to 5 nights in one query
 update bookings set nights=5 where customer_id=1 and hotel_id=1;
+
+-- EXERCISE 4 WEEK 2
+
+-- Delete the booking of customer ID 8 for the date 2020-01-03
+delete from bookings where customer_id=8 and checkin_date='2020-01-03';
+
+-- Delete all the bookings of customer ID 6
+delete from bookings where customer_id=6;
+
+-- Delete the customer with ID 6
+delete from customers where id=6;
