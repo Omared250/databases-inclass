@@ -221,8 +221,8 @@ select * from customers;
 
 -- Retrieve all the bookings along with customer data for bookings starting in 2020
 select *
-from customers c 
-inner join bookings b on b.customer_id=c.id 
+from bookings b
+inner join customers c on c.id=b.customer_id
 where b.checkin_date >= '2020-01-01' and b.checkin_date <= '2020-12-31';
 
 -- Retrieve the customer names, booking start dates and number of nights for all customers who 
